@@ -5,6 +5,5 @@ df2 = pd.read_csv("file_b.csv")
 
 df = pd.merge(df1, df2, on='user_id')
 
-df.to_csv('merged.csv')
+df.to_csv('merged_python.csv')
 
-print(df)
