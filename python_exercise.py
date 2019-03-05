@@ -21,7 +21,12 @@ api_df = json_normalize(x, 'users')
 
 dfa = df.set_index('email')
 dfa.update(api_df.set_index('email'))
-dfa.to_csv("merged_python_corrected.csv")
+dfa.reset_index()
+dfx = dfa.reset_index()
+dfx = dfx[['uid', 'email', 'first_name', 'last_name']]
+dfx.columns = ['user_id','email','first_name','last_name']
+
+dfx.to_csv("merged_python_corrected.csv")
 
 
 
